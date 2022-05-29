@@ -10,4 +10,4 @@ repository = "https://github.com/a-lafrance/discrim"
 keywords = ["enum", "codegen", "discriminant", "tag", "derive"]
 
 [dependencies]
-discrim-codegen = { path = "../discrim-codegen" }
+discrim-codegen = { version = "0.0.1", path = "../discrim-codegen" }
