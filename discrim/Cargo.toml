@@ -5,6 +5,9 @@ edition = "2021"
 
 authors = ["Arthur Lafrance <lafranca@uci.edu>"]
 description = "Construct enum variants from their tag"
+license = "MIT"
+repository = "https://github.com/a-lafrance/discrim"
+keywords = ["enum", "codegen", "discriminant", "tag", "derive"]
 
 [dependencies]
 discrim-codegen = { path = "../discrim-codegen" }
