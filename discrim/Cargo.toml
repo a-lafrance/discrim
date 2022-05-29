@@ -1,0 +1,10 @@
+[package]
+name = "discrim"
+version = "0.0.1"
+edition = "2021"
+
+authors = ["Arthur Lafrance <lafranca@uci.edu>"]
+description = "Construct enum variants from their tag"
+
+[dependencies]
+discrim-codegen = { path = "../discrim-codegen" }
