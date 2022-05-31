@@ -1,0 +1,7 @@
+error: proc-macro derive panicked
+ --> $DIR/generics.rs:3:10
+  |
+3 | #[derive(FromDiscriminant)]
+  |          ^^^^^^^^^^^^^^^^
+  |
+  = help: message: generic enums are not supported

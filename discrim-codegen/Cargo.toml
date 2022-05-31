@@ -19,3 +19,4 @@ syn = { version = "1.0.95", features = ["full"] }
 
 [dev-dependencies]
 discrim = { path = "../discrim" }
+trybuild = "1.0.61"
