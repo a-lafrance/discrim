@@ -1,0 +1,7 @@
+error: proc-macro derive panicked
+ --> $DIR/missing_repr.rs:3:10
+  |
+3 | #[derive(FromDiscriminant)]
+  |          ^^^^^^^^^^^^^^^^
+  |
+  = help: message: #[repr(...)] attribute is required

@@ -1,0 +1,7 @@
+error: proc-macro derive panicked
+ --> $DIR/empty_enum.rs:3:10
+  |
+3 | #[derive(FromDiscriminant)]
+  |          ^^^^^^^^^^^^^^^^
+  |
+  = help: message: enum must have at least one variant
