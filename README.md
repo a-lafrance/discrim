@@ -3,26 +3,29 @@ Construct enum variants from their discriminant
 
 ## Overview
 
-This is an initial prototype of a library capable of generating code to construct enum variants from their discriminant. It only works for fieldless `#[repr(...)]` enums (those are the only cases that make sense), and works by deriving an implementation of the custom `FromDiscriminant` trait.
+In order to initialize certain enum values from their discriminant, you basically have to manually write a giant match block that maps from each discriminant to the corresponding variant. This is both an annoyingly manual process and a potentially unsafe one; for example, what if you forget to update a discriminant value in the match after changing it in the enum definition?
 
-This library is still pretty experimental, and is very lightly tested & sparsely documented, so at the moment use it at your own risk. I've put it on `crates.io` for the daredevils out there and also just to practice publishing a crate. Future versions to come in the near future will be more fit for actual use.
+This crate addresses that by providing a way to automatically generate that initialization code. More specifically, for fieldless, non-generic enums with a `#[repr(...)]` specified, it provides the `FromDiscriminant` trait and corresponding derive macro that automatically generates the initialization code as an implementation of the trait.
 
-Also, much of the inspiration behind this implementation goes to David Tolnay's `serde_repr` crate, which does something very similar. I'm no codegen expert, so I borrowed pretty heavily from his implementation in terms of high-level concepts, and implemented them myself as best I could.
+This project is licensed under the MIT License.
 
 ## Example
 
-A simple example, based on the use case that inspired me to make this crate in the first place:
+A simple example, based on the use case that inspired this crate to begin with:
 ```rust
 use discrim::FromDiscriminant;
 
 #[derive(Debug, FromDiscriminant)]
 #[repr(u8)]
 enum Opcode {
-  Add, Sub, Mul, Div,
+    Add, Sub, Mul, Div,
 }
 
 fn main() {
-  // prints "Ok(Mul)"
-  println!("{:?}", Opcode::from_discriminant(2));
+    // prints "Ok(Mul)"
+    println!("{:?}", Opcode::from_discriminant(2));
+
+    // prints "Err(5)"
+    println!("{:?}", Opcode::from_discriminant(5));
 }
 ```
