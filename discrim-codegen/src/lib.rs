@@ -10,6 +10,24 @@ use syn::{
 // TODO: nicer error handling
     // maybe using syn::parse
 
+/// Automatically implement `FromDiscriminant` for enums.
+///
+/// **Important:** Implementations can only be derived for types that are fieldless enums without generics,
+/// and which specify a `#[repr(...)]` attribute.
+///
+/// # Example
+/// ```rust
+/// use discrim::FromDiscriminant;
+///
+/// #[derive(Debug, FromDiscriminant, PartialEq)]
+/// #[repr(u8)]
+/// enum Opcode {
+///     Add, Sub, Mul, Div
+/// }
+///
+/// assert_eq!(Opcode::from_discriminant(2), Ok(Opcode::Mul));
+/// assert_eq!(Opcode::from_discriminant(5), Err(5));
+/// ```
 #[proc_macro_derive(FromDiscriminant)]
 pub fn derive_from_discriminant(input: TokenStream) -> TokenStream {
     let input = syn::parse(input).expect("failed to parse macro input");

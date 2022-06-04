@@ -1,5 +1,5 @@
 # TODO
 
 - [x] Tests
-- [ ] Docs
+- [x] Docs
 - [ ] Run the API through the [checklist](https://rust-lang.github.io/api-guidelines/checklist.html)
