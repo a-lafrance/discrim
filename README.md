@@ -1,6 +1,8 @@
 # discrim
 Construct enum variants from their discriminant
 
+**NOTE: I'm no longer maintaining this due to the existence of [`soccer`](https://github.com/a-lafrance/soccer); I've pretty much absorbed what I built here into that new crate, which I'll be maintaining from now on.**
+
 ## Overview
 
 In order to initialize certain enum values from their discriminant, you basically have to manually write a giant match block that maps from each discriminant to the corresponding variant. This is both an annoyingly manual process and a potentially unsafe one; for example, what if you forget to update a discriminant value in the match after changing it in the enum definition?
