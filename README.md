@@ -1,7 +1,7 @@
 # discrim
 Construct enum variants from their discriminant
 
-**NOTE: I'm no longer maintaining this due to the existence of [`soccer`](https://github.com/a-lafrance/soccer); I've pretty much absorbed what I built here into that new crate, which I'll be maintaining from now on.**
+**NOTE: I'm no longer maintaining this due to the existence of [`soccer`](https://github.com/a-lafrance/soccer); I've pretty much absorbed what I built here into that new crate, which I'll be maintaining from now on. If this crate looks interesting to you, you should go use `soccer` instead (it's better, I promise).**
 
 ## Overview
 
